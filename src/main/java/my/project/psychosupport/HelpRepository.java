@@ -1,6 +1,7 @@
 package my.project.psychosupport;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  */
 public class HelpRepository {
 
-	private final List<String> helpMessages = new ArrayList<>();
+	private final List<String> helpMessages = Collections.synchronizedList(new ArrayList<>());
 
 	/**
 	 * Сохраняет новое сообщение поддержки в хранилище.
