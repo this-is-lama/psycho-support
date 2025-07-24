@@ -10,7 +10,7 @@ public class HelpService {
 		Random rand = new Random();
 		int size = helpRepo.getLength();
 		if (size == 0) {
-			return "Хранилище пусто!";
+			return "Пока нет сообщений поддержки. Пожалуйста, добавьте своё!";
 		}
 		int index = rand.nextInt(size);
 		return helpRepo.getHelpMessageById(index);
