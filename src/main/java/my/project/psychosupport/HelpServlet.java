@@ -1,5 +1,9 @@
 package my.project.psychosupport;
 
+import my.project.psychosupport.repository.HelpRepositoryFactory;
+import my.project.psychosupport.service.HelpService;
+import my.project.psychosupport.service.HelpServiceImpl;
+
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,7 +16,7 @@ import java.io.PrintWriter;
  */
 public class HelpServlet extends HttpServlet {
 
-	private final HelpService helpService = new HelpService();
+	private final HelpService helpService = new HelpServiceImpl(HelpRepositoryFactory.getInstance());
 
 	/**
 	 * Обрабатывает GET-запросы, возвращая случайное сообщение поддержки.

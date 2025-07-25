@@ -1,4 +1,4 @@
-package my.project.psychosupport;
+package my.project.psychosupport.repository;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,7 +8,7 @@ import java.util.List;
  * Класс-репозиторий для хранения и управления сообщениями психологической поддержки.
  * Обеспечивает базовые CRUD-операции для работы с сообщениями.
  */
-public class HelpRepository {
+public class HelpRepositoryImpl implements HelpRepository {
 
 	private final List<String> helpMessages = Collections.synchronizedList(new ArrayList<>());
 
@@ -18,6 +18,7 @@ public class HelpRepository {
 	 * @param message Текст сообщения для сохранения
 	 * @throws IllegalArgumentException если сообщение null или пустое
 	 */
+	@Override
 	public void saveHelpMessage(String message) {
 		helpMessages.add(message);
 	}
@@ -29,6 +30,7 @@ public class HelpRepository {
 	 * @return Текст сообщения
 	 * @throws IndexOutOfBoundsException если индекс выходит за границы списка
 	 */
+	@Override
 	public String getHelpMessageById(int index) {
 		return helpMessages.get(index);
 	}
@@ -38,6 +40,7 @@ public class HelpRepository {
 	 *
 	 * @return Количество сохраненных сообщений
 	 */
+	@Override
 	public int getLength() {
 		return helpMessages.size();
 	}
