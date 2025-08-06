@@ -40,6 +40,7 @@ public class ApplicationContext {
 		}
 	}
 
+	
 	public <T> T getInstance(Class<T> type) {
 		return (T) Optional.ofNullable(instances.get(type))
 				.orElseThrow();
